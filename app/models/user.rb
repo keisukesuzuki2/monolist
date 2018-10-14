@@ -31,7 +31,7 @@ class User < ApplicationRecord
     self.haves.find_or_create_by(item_id: item.id)
   end
 
-  def unwant(item)
+  def unhave(item)
     have = self.haves.find_by(item_id: item.id)
     have.destroy if have
   end
